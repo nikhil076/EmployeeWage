@@ -11,4 +11,9 @@ PerHourWage=20
 FullDayHour=8
 
 EmployeeWage=$(($PerHourWage*$FullDayHour))
-echo $EmployeeWage
+echo "Full time employee wage is $EmployeeWage"
+
+PartTimeHour=8
+
+PartTimeEmployeeWage=$(($PerHourWage*$PartTimeHour))
+echo "part time employee wage is $PartTimeEmployeeWage"
