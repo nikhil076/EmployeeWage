@@ -9,11 +9,19 @@ fi
 
 PerHourWage=20
 FullDayHour=8
-
-EmployeeWage=$(($PerHourWage*$FullDayHour))
-echo "Full time employee wage is $EmployeeWage"
-
 PartTimeHour=8
 
-PartTimeEmployeeWage=$(($PerHourWage*$PartTimeHour))
-echo "part time employee wage is $PartTimeEmployeeWage"
+echo "Enter 1 to check for full time employee wages"
+echo "Enter 2 to check for part time employee wages"
+read n
+case $n in
+
+	1)	EmployeeWage=$(($PerHourWage*$FullDayHour))
+		echo "Full time employee wage is $EmployeeWage" ;;
+
+
+	2)	PartTimeEmployeeWage=$(($PerHourWage*$PartTimeHour))
+		echo "part time employee wage is $PartTimeEmployeeWage" ;;
+
+	*)	echo "Enter correct number" ;;
+esac
