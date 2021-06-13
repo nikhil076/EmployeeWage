@@ -17,16 +17,22 @@ echo "Enter 2 to check for part time employee wages"
 read n
 case $n in
 
-	1)	EmployeeWage=$(($PerHourWage*$FullDayHour))
+	1)	if [ $FullDayHour -le 8 ] && [ $WorkingPerMonth -le 20 ]
+		then
+		EmployeeWage=$(($PerHourWage*$FullDayHour))
 		echo "Full time employee per day wage is $EmployeeWage"
-		FullTimeWagesPerMonth=$(($WorkingPerMonth*$EmployeeWage)) 
-		echo "Full time employee per month wage is $FullTimeWagesPerMonth" ;;
+		FullTimeWagesPerMonth=$(($WorkingPerMonth*$EmployeeWage))
+		echo "Full time employee per month wage is $FullTimeWagesPerMonth"
+		fi ;;
 
 
-	2)	PartTimeEmployeeWage=$(($PerHourWage*$PartTimeHour))
+	2)	if [ $PartTimeHour -le 8 ] && [ $WorkingPerMonth -le 20 ]
+		then
+		PartTimeEmployeeWage=$(($PerHourWage*$PartTimeHour))
 		echo "part time employee per day wage is $PartTimeEmployeeWage"
 		PartTimeWagesPerMonth=$(($WorkingPerMonth*$PartTimeEmployeeWage))
-		echo  "Part time employee wage per month is $PartTimeWagesPerMonth" ;;
+		echo  "Part time employee wage per month is $PartTimeWagesPerMonth"
+		fi ;;
 
 	*)	echo "Enter correct number" ;;
 esac
